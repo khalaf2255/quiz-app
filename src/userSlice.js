@@ -45,7 +45,7 @@ const initialState = {
         },
         { id: 2, text: 'Sohag', isCorrect: false, selected: false },
         { id: 3, text: 'Tanta', isCorrect: false, selected: false },
-        { id: 4, text: 'Alexandria', isCorrect: true, selected: false },
+        { id: 4, text: 'Alexandria', isCorrect: false, selected: false },
       ],
     },
   ],
