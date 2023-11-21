@@ -42,7 +42,7 @@ export default function QuestionItem({ question, submit }) {
                         ${submit && opt.selected && opt.isCorrect ? 'correct' : ''} `} 
                         onClick={() => handelSelectedOption(question.id, opt.id, opt)} key={Math.random()}>
                         <input
-                            checked={ ss  === 2 ? opt.selected : 'checked' }
+                            checked={opt.selected  }
                             type={ss === 1 ? 'radio' : 'checkbox'} name={ss === 1 ? question.id : opt.name}
                             onChange={() => handelSelectedOption(question.id, opt.id)} />
                         {opt.text}
