@@ -1,0 +1,83 @@
+.opts {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+label {
+  cursor: pointer;
+  width: 100%;
+  padding: 3px;
+  font-weight: bold;
+  transition: 0.5s;
+  display: flex;
+  gap: 10px;
+}
+.pointerEvents {
+  pointer-events: none;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+
+.selected {
+  color: blue;
+}
+
+.correct {
+  color: green;
+}
+.wrong {
+  color: red;
+}
+
+button {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #00bcd45e;
+  border: navajowhite;
+  box-shadow: 3px 3px 3px #00bcd4e6;
+  transition: 0.4s;
+}
+
+label {
+  width: 100%;
+}
+label:hover {
+  background: #fff5f5;
+}
+
+.corr {
+  background: gray;
+  padding: 13px;
+  border-radius: 6px;
+  color: #fff;
+  position: absolute;
+  bottom: -70px;
+  width: 91%;
+}
+.corr b {
+  color: green;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 3px solid #000;
+}
+
+
+@media screen and (min-width: 1000px) {
+  main {
+    padding: 0 10%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    padding: 0 20%;
+  }
+}
