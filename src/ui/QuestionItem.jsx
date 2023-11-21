@@ -1,12 +1,19 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getSeelectedOption, getCorrect, getInCorrect, getQuestionStatus } from '../userSlice';
+import { useState } from 'react';
 
 export default function QuestionItem({ question, submit }) {
 
 
     const { id, options, question: questionText } = question
     const dispatch = useDispatch()
+    const [isSelected, setIsSelected] = useState({
+        0: false,
+        1: false,
+        2: false,
+        3: false,
+    });
     let ss = question.options.map(xx => xx.isCorrect === true).filter(item => item === true).length
     const questions = useSelector(store => store.user.questions)
     const corr = questions.map(q =>q.options.map(opt => opt.isCorrect && opt.text).filter(item => item  ))
@@ -28,14 +35,14 @@ export default function QuestionItem({ question, submit }) {
             <div className='opts'>
 
 
-                {options.map(opt =>
+                {options.map((opt, i) =>
                     <label
                         className={`${opt.selected && ss === 1 ? 'selected' : ''}
                         ${submit && opt.selected && !opt.isCorrect ? 'wrong' : ''}
                         ${submit && opt.selected && opt.isCorrect ? 'correct' : ''} `} 
                         onClick={() => handelSelectedOption(question.id, opt.id, opt)} key={Math.random()}>
                         <input
-                            checked={ opt.selected  }
+                            checked={ ss  === 2 ? opt.selected : 'checked' }
                             type={ss === 1 ? 'radio' : 'checkbox'} name={ss === 1 ? question.id : opt.name}
                             onChange={() => handelSelectedOption(question.id, opt.id)} />
                         {opt.text}
